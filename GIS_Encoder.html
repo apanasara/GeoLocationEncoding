@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src='js/bignumber_base64.js'></script>
+    <script src='js/LocationEncoderDecoder.js'></script>
+
+    <script type="text/javascript">
+
+        function encode_decode() {
+            var lat = document.getElementById("lat").value;
+            var lon = document.getElementById("lon").value;
+
+            let e36 = locEncode(lat, lon, 36);
+            let e62 = locEncode(lat, lon, 62);
+
+            let d36 = locDecode(e36, 36);
+            let d62 = locDecode(e62, 62);
+
+            document.getElementById("base36").innerHTML = "<b>Base-36</b><br/>" +
+                "encoding : " + e36 +
+                "<br/>its length : " + e36.length +
+                "<br/>its decoding : " + d36.latitude + "," + d36.longitude;
+            document.getElementById("base62").innerHTML = "<b>Base-62</b><br/>" +
+                "encoding : " + e62 +
+                "<br/>its length : " + e62.length +
+                "<br/>its decoding : " + d62.latitude + "," + d62.longitude;
+        }
+
+    </script>
+</head>
+
+<body style="font-family:Arial, Helvetica, sans-serif">
+    <div style="width:800px; margin:100px auto;">
+        <h2>Geo Location Encoding-Decoding</h2>
+
+
+        Latitude : <input type="text" id="lat" name="lat" value="-89.999999"/> <i>(+/-, upto 90deg, 6 digits after decimal points)</i><br /><br />
+        Longitude : <input type="text" id="lon" name="lon" value="-179.999999"/> <i>(+/-, upto 180deg, 6 digits after decimal points)</i><br /><br />
+        <button id="saveForm" class="button_text" type="submit" name="submit" value="Submit"
+            onclick="encode_decode();">Encode Coordinates</button><br /><br />
+
+        <h3>RESULT :</h3>
+        <p id="base36"></p>
+        <p id="base62"></p>
+
+    </div>
+</body>
+
+</html>
