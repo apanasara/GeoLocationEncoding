@@ -13,6 +13,9 @@ Hence, Here tried to compress Geo coordinate from base-10 to base36/62
 2. It is **case in-sensitive**, hence suitable to H2M (Humant-to-machine) / M2H / H2H transection.
 
 ## String-Formation for Geo-Coordinate (Latitude,Longitude)
+
+![Geo Location](https://github.com/apanasara/GeoLocationEncoding/blob/master/example.jpg)
+
 |-|8|9|.|9|9|9|9|9|9|,|-|1|7|9|.|9|9|9|9|9|9|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|
