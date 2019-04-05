@@ -1,5 +1,5 @@
 # GeoLocationEncoding
-Encoding Decoding of Geo Location for ease-in-sharing the compacted-location.
+Encoding Decoding of Geo Location for IOT network for sharing compacted-point-locations in M2M Transections.
 
 Storing Latitude & Longitude in database occupy 32 bits each means total *64 bits*. but while transmitting coordinates over http with content-type text/plain or text/html, all digits, signs, floating points & seprater are treated as text-charecter, which occupy 8 bits per charecter means with current 6-decimal-precision it moccupies 22 charecters max, equivalent to *176 bits*.
 Hence, Here tried to compress Geo coordinate from base-10 to base36/62.
